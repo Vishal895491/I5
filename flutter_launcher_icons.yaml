@@ -1,0 +1,6 @@
+flutter_launcher_icons:
+  image_path: "assets/images/FK-litmus.png"
+  windows:
+    generate: true
+    image_path: "assets/images/FK-litmus.png"
+    icon_size: 48
