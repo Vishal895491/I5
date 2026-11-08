@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   camera_windows
+  desktop_multi_window
   flutter_tts
 )
 
