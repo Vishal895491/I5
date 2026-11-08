@@ -31,6 +31,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);
+    HWND hwnd = window.GetHandle();
+  HICON default_icon = LoadIcon(nullptr, IDI_APPLICATION);
+
+  SendMessage(hwnd, WM_SETICON, ICON_BIG,
+              reinterpret_cast<LPARAM>(default_icon));
+
+  SendMessage(hwnd, WM_SETICON, ICON_SMALL,
+              reinterpret_cast<LPARAM>(default_icon));
 
   ::MSG msg;
   while (::GetMessage(&msg, nullptr, 0, 0)) {
@@ -41,13 +49,3 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   ::CoUninitialize();
   return EXIT_SUCCESS;
 }
-  window.SetQuitOnClose(true);
-    HWND hwnd = window.GetHandle();
-
-  HICON default_icon = LoadIcon(nullptr, IDI_APPLICATION);
-
-  SendMessage(hwnd, WM_SETICON, ICON_BIG,
-              reinterpret_cast<LPARAM>(default_icon));
-
-  SendMessage(hwnd, WM_SETICON, ICON_SMALL,
-              reinterpret_cast<LPARAM>(default_icon));
